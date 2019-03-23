@@ -25,11 +25,11 @@ app.use(bodyParser.json());
 
 app.post(URI, (req, res) => {
     let demozone = req.params.demozone;
-    if (!demozone || !body || !body.payload) {
+    if (!demozone || !req.body || !req.body.payload) {
       res.status(400).send().end();
       return;
     }
-    console.log(body)
+    console.log(req.body)
     res.status(204).send().end();
 });
 
