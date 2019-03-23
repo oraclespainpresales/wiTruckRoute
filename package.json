@@ -1,0 +1,26 @@
+{
+  "name": "witruckroute",
+  "version": "1.0.0",
+  "description": "WEDO Industry: simple helper to set the GPS points for a particular route, into a JS file",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oraclespainpresales/wiTruckRoute.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oraclespainpresales/wiTruckRoute/issues"
+  },
+  "homepage": "https://github.com/oraclespainpresales/wiTruckRoute#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "fs-extra": "^7.0.1",
+    "npmlog-ts": "0.0.1"
+  }
+}
