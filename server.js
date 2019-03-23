@@ -8,7 +8,7 @@ const log = require('npmlog-ts')
 ;
 
 const PROCESS   = "PROCESS"
-    , WWWFOLDER = "/var/www/mapviewer"
+    , WWWFOLDER = "/var/www/mapviewer/"
     , PORT      = 9007
     , URI       = "/wedoindustry/truck/route/:demozone"
 ;
@@ -34,7 +34,8 @@ app.post(URI, (req, res) => {
       res.status(400).send().end();
       return;
     }
-    console.log(req.body)
+    let file = WWWFOLDER + demozone.toLowerCase() + '.js';
+    fs.writeFileSync(file, "var route = " + req.body);
     res.status(204).send().end();
 });
 
