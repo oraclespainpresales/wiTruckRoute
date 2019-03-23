@@ -20,8 +20,13 @@ log.info(PROCESS, "WEDO Industry - Truck Route - 1.0");
 log.info(PROCESS, "Author: Carlos Casares <carlos.casares@oracle.com>");
 
 var app = express();
+
+app.use(bodyParser.json({limit: '10mb', extended: true}))
+app.use(bodyParser.urlencoded({limit: '10mb', extended: true}))
+/**
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
+**/
 
 app.post(URI, (req, res) => {
     let demozone = req.params.demozone;
