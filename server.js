@@ -35,7 +35,7 @@ app.post(URI, (req, res) => {
       return;
     }
     let file = WWWFOLDER + demozone.toLowerCase() + '.js';
-    fs.writeFileSync(file, "var route = " + req.body);
+    fs.writeFileSync(file, "var route = " + req.body.payload);
     res.status(204).send().end();
 });
 
