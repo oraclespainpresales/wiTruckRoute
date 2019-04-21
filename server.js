@@ -32,11 +32,7 @@ app.use(bodyParser.json());
 app.post(URI, (req, res) => {
   let demozone = req.params.demozone;
   let uuid = req.params.uuid;
-  console.log(demozone);
-  console.log(uuid);
-  console.log(req.body);
-  console.log(req.body.payload);
-  if (!demozone || !uuid || !req.body || !req.body.payload) {
+  if (!demozone || !uuid || !req.body) {
     res.status(400).send().end();
     return;
   }
@@ -46,7 +42,7 @@ app.post(URI, (req, res) => {
       fs.removeSync(f);
     });
     let file = WWWFOLDER + demozone + '.' + uuid + '.js';
-    fs.writeFileSync(file, "var route = " + req.body.payload + ";");
+    fs.writeFileSync(file, "var route = " + JSON.stringify(req.body) + ";");
     res.status(204).send().end();
   });
 });
