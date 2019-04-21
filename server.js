@@ -38,7 +38,7 @@ app.post(URI, (req, res) => {
     return;
   }
   demozone = demozone.toLowerCase();
-  glob( demozone + '*.js', (er, files) => {
+  glob( WWWFOLDER + demozone + '*.js', (er, files) => {
     _.forEach(files, (f) => {
       fs.removeSync(f);
     });
