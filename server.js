@@ -46,6 +46,7 @@ app.post(URI, (req, res) => {
       fs.removeSync(f);
     });
     let file = WWWFOLDER + demozone + '.' + uuid + '.js';
+    console.log("Writing file " + file);
     fs.writeFileSync(file, "var route = " + JSON.stringify(req.body) + ";");
     res.status(204).send().end();
   });
