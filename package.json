@@ -19,6 +19,7 @@
   "homepage": "https://github.com/oraclespainpresales/wiTruckRoute#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
     "fs-extra": "^7.0.1",
     "glob": "^7.1.3",

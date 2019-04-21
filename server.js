@@ -2,6 +2,7 @@
 
 const log = require('npmlog-ts')
     , util = require('util')
+    , cors = require('cors')
     , express = require('express')
     , bodyParser = require('body-parser')
     , glob = require("glob")
@@ -23,8 +24,10 @@ log.info(PROCESS, "Author: Carlos Casares <carlos.casares@oracle.com>");
 
 var app = express();
 
-app.use(bodyParser.json({limit: '10mb', extended: true}))
-app.use(bodyParser.urlencoded({limit: '10mb', extended: true}))
+app.use(bodyParser.json({limit: '10mb', extended: true}));
+app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
+app.use(cors());
+
 /**
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
