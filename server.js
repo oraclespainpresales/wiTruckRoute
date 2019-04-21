@@ -6,6 +6,7 @@ const log = require('npmlog-ts')
     , bodyParser = require('body-parser')
     , glob = require("glob")
     , fs = require('fs-extra')
+    , _ = require('lodash')
 ;
 
 const PROCESS   = "PROCESS"
